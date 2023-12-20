@@ -154,7 +154,7 @@ img {
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 1080px) {
     body {
         width: 100%;
     }
