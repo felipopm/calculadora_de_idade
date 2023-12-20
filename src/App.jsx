@@ -112,7 +112,7 @@ function App() {
             <hr />
           </div>
           <div>
-            <img src="/src/assets/images/icon-arrow.svg" alt="seta" />
+            <img src="./src/assets/images/icon-arrow.svg" alt="seta" />
           </div>
           <div className='linhadois'>
             <hr />
