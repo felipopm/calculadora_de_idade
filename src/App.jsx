@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css'
+import { FaRegArrowAltCircleDown } from "react-icons/fa";
+
 
 function App() {
 
@@ -65,9 +67,9 @@ function App() {
 
           {/* Input dia */}
           <div className="dia">
-            <p className={`${inputYear > 2023 || inputMonth > dataAtual.getMonth() + 1 || inputDay > 31 || inputDay > dataAtual.getDate() && inputMonth == (dataAtual.getMonth() + 1) &&inputYear == dataAtual.getFullYear() ? "d-invalido" : ""}`} >DAY</p>
+            <p className={`${inputYear > 2023 || inputMonth > dataAtual.getMonth() + 1 || inputDay > 31 || inputDay > dataAtual.getDate() && inputMonth == (dataAtual.getMonth() + 1) && inputYear == dataAtual.getFullYear() ? "d-invalido" : ""}`} >DAY</p>
             <input
-              className={`${inputYear > 2023 || inputMonth > (dataAtual.getMonth() + 1) || inputDay > 31 || inputDay > dataAtual.getDate() && inputMonth == (dataAtual.getMonth() + 1) &&inputYear == dataAtual.getFullYear() ? "invalido" : ""}`}
+              className={`${inputYear > 2023 || inputMonth > (dataAtual.getMonth() + 1) || inputDay > 31 || inputDay > dataAtual.getDate() && inputMonth == (dataAtual.getMonth() + 1) && inputYear == dataAtual.getFullYear() ? "invalido" : ""}`}
               type="text"
               placeholder='DD'
               value={inputDay}
@@ -112,7 +114,7 @@ function App() {
             <hr />
           </div>
           <div>
-            <img src="./src/assets/images/icon-arrow.svg" alt="seta" />
+            <FaRegArrowAltCircleDown />
           </div>
           <div className='linhadois'>
             <hr />
@@ -134,11 +136,11 @@ function App() {
                 <h1>
                   {/* {resultYear} */}
 
-                  { isNaN(resultYear) ? 
+                  {isNaN(resultYear) ?
                     resultYear :
                     (resultMonth > (dataAtual.getMonth() + 1) || (resultDay > dataAtual.getDate() && (dataAtual.getMonth() + 1) == 12 && resultMonth == 12)) ?
-                    (dataAtual.getFullYear() - resultYear - 1) : 
-                    (dataAtual.getFullYear() - resultYear) }
+                      (dataAtual.getFullYear() - resultYear - 1) :
+                      (dataAtual.getFullYear() - resultYear)}
 
                   {/* {(dataAtual.getMonth() + 1) - resultMonth < 0 ? dataAtual.getFullYear() - resultYear - 1 :
                     isNaN(resultYear) ? resultYear :
@@ -159,17 +161,17 @@ function App() {
               <div className="resultado-nao-calculado">
                 <h1>
                   {/* {resultMonth} */}
-                  
-                  { isNaN(resultMonth) ? 
+
+                  {isNaN(resultMonth) ?
                     resultMonth :
-                    (resultDay > dataAtual.getDate() && (dataAtual.getMonth() + 1) > resultMonth) ? 
-                    ((dataAtual.getMonth() + 1) - resultMonth - 1) : 
-                    (resultDay > dataAtual.getDate()) ? 
-                    (12 - resultMonth + (dataAtual.getMonth() + 1) - 1) : 
-                    (resultMonth > (dataAtual.getMonth() + 1)) ? 
-                    (12 - resultMonth + (dataAtual.getMonth() + 1)) :
-                    (dataAtual.getMonth() + 1) - resultMonth }
-                  
+                    (resultDay > dataAtual.getDate() && (dataAtual.getMonth() + 1) > resultMonth) ?
+                      ((dataAtual.getMonth() + 1) - resultMonth - 1) :
+                      (resultDay > dataAtual.getDate()) ?
+                        (12 - resultMonth + (dataAtual.getMonth() + 1) - 1) :
+                        (resultMonth > (dataAtual.getMonth() + 1)) ?
+                          (12 - resultMonth + (dataAtual.getMonth() + 1)) :
+                          (dataAtual.getMonth() + 1) - resultMonth}
+
                   {/* {(dataAtual.getMonth() + 1) > resultMonth ? (dataAtual.getMonth() + 1) - resultMonth :
                     isNaN(resultMonth) ? resultMonth :
                       resultDay > dataAtual.getDate() ? 12 - resultMonth + (dataAtual.getMonth() + 1) - 1 :
@@ -190,11 +192,11 @@ function App() {
               <div className="resultado-nao-calculado">
                 <h1>
                   {/* {resultDay} */}
-                  { isNaN(resultDay) ? 
+                  {isNaN(resultDay) ?
                     resultDay :
-                    resultDay > dataAtual.getDate() ? 
-                    31 - resultDay + dataAtual.getDate() :
-                    dataAtual.getDate() - resultDay}
+                    resultDay > dataAtual.getDate() ?
+                      31 - resultDay + dataAtual.getDate() :
+                      dataAtual.getDate() - resultDay}
                 </h1>
               </div>
             )}
